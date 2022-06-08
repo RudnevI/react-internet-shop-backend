@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::controller(BaseController::class)->group(function () {
     foreach(array_keys(config('routes')) as $route) {
         Route::get($route.'/all', 'getAll');
-        Route::get($route.'/filter', 'getFiltered');
+        Route::post($route.'/filter', 'getFiltered');
         Route::get($route.'/search/{value}', 'search');
     }
 
